@@ -5,7 +5,7 @@ import { StatBlock } from "@/components/StatBlock";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Launch Liberia | Donate to Education and Meals in Liberia",
+  title: "Launch Liberia: Donate to Education and Meals",
   description:
     "Heart In Heaven partners with the Liberian Church to fund school meals, savings groups, and digital education at Champion Academy in Paynesville, Liberia. Donate to help children in Liberia today.",
   alternates: {

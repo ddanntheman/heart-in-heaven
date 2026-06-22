@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "About Heart In Heaven | Team, Partners, and Financials",
+  title: "About: Team, Partners, and Financials",
   description:
     "Meet founder Angelique C. McGlotten, explore 20+ vetted Christian relief partners, review financials, and read our donor FAQ. Heart In Heaven is a 501(c)(3) nonprofit.",
   alternates: {

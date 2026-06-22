@@ -3,7 +3,7 @@ import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "How Leveraged Giving Works | Heart In Heaven",
+  title: "How Leveraged Giving Works",
   description:
     "Leveraged giving explained: your monthly gift is pooled with other Heart Partners and distributed across 20+ vetted Christian ministries. Like a mutual fund for generosity.",
   alternates: {

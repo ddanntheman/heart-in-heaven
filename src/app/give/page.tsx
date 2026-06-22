@@ -4,7 +4,7 @@ import { TrustStrip } from "@/components/TrustStrip";
 import { DonationForm } from "./DonationForm";
 
 export const metadata: Metadata = {
-  title: "Donate to Heart In Heaven | Give to 20+ Christian Nonprofits",
+  title: "Donate: Give to 20+ Christian Nonprofits",
   description:
     "Give monthly or once. Your donation is split evenly across 20+ vetted Christian relief ministries serving vulnerable communities in Liberia and worldwide. 501(c)(3) tax deductible.",
   alternates: {
