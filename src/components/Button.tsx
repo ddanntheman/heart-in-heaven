@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "ghost" | "light";
 
 interface BaseProps {
   variant?: Variant;
@@ -23,6 +23,8 @@ const variantStyles: Record<Variant, string> = {
     "bg-transparent text-indigo-700 border-indigo-700 hover:bg-indigo-700 hover:text-cream",
   ghost:
     "bg-transparent text-indigo-700 border-transparent hover:text-indigo-600 underline-offset-4 hover:underline",
+  light:
+    "bg-transparent text-cream border-cream hover:bg-cream hover:text-indigo-700",
 };
 
 const baseStyles =
