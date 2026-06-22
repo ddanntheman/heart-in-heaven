@@ -5,6 +5,7 @@ import { StatBlock } from "@/components/StatBlock";
 import { TrustStrip } from "@/components/TrustStrip";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Newsletter } from "@/components/Newsletter";
+import { InteractiveTransparency } from "@/components/InteractiveTransparency";
 
 export const metadata: Metadata = {
   title: { absolute: "Heart In Heaven | One gift. Twenty ministries. Eternal impact." },
@@ -133,37 +134,9 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Transparency"
             title="Where your money goes"
+            subtitle="Move the gift amount, explore the allocation, and hover across partner ministries to see how leveraged giving turns one donation into many trusted touchpoints."
           />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Donut chart */}
-            <div className="flex justify-center">
-              <DonutChart />
-            </div>
-            {/* Partner grid */}
-            <div>
-              <p className="font-body text-sm text-warm-500 mb-6">
-                20+ vetted partner ministries receive equal shares each month:
-              </p>
-              <div className="grid grid-cols-4 sm:grid-cols-5 gap-4">
-                {partnerMinistries.map((partner) => (
-                  <div
-                    key={partner}
-                    className="aspect-square bg-paper rounded-lg border border-warm-100 flex items-center justify-center p-2 grayscale hover:grayscale-0 transition-all duration-200"
-                    title={partner}
-                  >
-                    <span className="font-body text-xs text-warm-300 text-center leading-tight">
-                      {partner}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6">
-                <Button href="/about#financials" variant="ghost">
-                  Read our latest 990 &rarr;
-                </Button>
-              </div>
-            </div>
-          </div>
+          <InteractiveTransparency />
         </div>
       </section>
 
@@ -464,83 +437,6 @@ function BranchIcon() {
   );
 }
 
-function DonutChart() {
-  const programPct = 92;
-  const adminPct = 5;
-  const fundraisingPct = 3;
-
-  const radius = 80;
-  const circumference = 2 * Math.PI * radius;
-
-  const programDash = (programPct / 100) * circumference;
-  const adminDash = (adminPct / 100) * circumference;
-  const fundraisingDash = (fundraisingPct / 100) * circumference;
-
-  const programOffset = 0;
-  const adminOffset = -programDash;
-  const fundraisingOffset = -(programDash + adminDash);
-
-  return (
-    <div className="relative">
-      <svg viewBox="0 0 200 200" className="w-64 h-64 -rotate-90">
-        {/* Programs */}
-        <circle
-          cx="100"
-          cy="100"
-          r={radius}
-          fill="none"
-          stroke="#1F2A5C"
-          strokeWidth="24"
-          strokeDasharray={`${programDash} ${circumference}`}
-          strokeDashoffset={programOffset}
-        />
-        {/* Admin */}
-        <circle
-          cx="100"
-          cy="100"
-          r={radius}
-          fill="none"
-          stroke="#D4A24C"
-          strokeWidth="24"
-          strokeDasharray={`${adminDash} ${circumference}`}
-          strokeDashoffset={adminOffset}
-        />
-        {/* Fundraising */}
-        <circle
-          cx="100"
-          cy="100"
-          r={radius}
-          fill="none"
-          stroke="#A39E92"
-          strokeWidth="24"
-          strokeDasharray={`${fundraisingDash} ${circumference}`}
-          strokeDashoffset={fundraisingOffset}
-        />
-      </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="font-display font-semibold text-4xl text-indigo-700">
-          92%
-        </span>
-        <span className="font-body text-sm text-warm-500">to programs</span>
-      </div>
-      <div className="mt-4 flex justify-center gap-6 text-sm">
-        <Legend color="bg-indigo-600" label={`Programs ${programPct}%`} />
-        <Legend color="bg-gold-400" label={`Admin ${adminPct}%`} />
-        <Legend color="bg-warm-300" label={`Fundraising ${fundraisingPct}%`} />
-      </div>
-    </div>
-  );
-}
-
-function Legend({ color, label }: { color: string; label: string }) {
-  return (
-    <span className="flex items-center gap-1.5 font-body text-xs text-warm-500">
-      <span className={`w-2.5 h-2.5 rounded-full ${color}`} />
-      {label}
-    </span>
-  );
-}
-
 const generosityPaths = [
   {
     eyebrow: "Liberia education",
@@ -609,25 +505,3 @@ const answerCards = [
   },
 ];
 
-const partnerMinistries = [
-  "Compassion",
-  "charity:water",
-  "Samaritan's Purse",
-  "Wycliffe",
-  "Voice of the Martyrs",
-  "Gospel for Asia",
-  "Food for the Hungry",
-  "World Relief",
-  "International Justice Mission",
-  "Mercy Ships",
-  "CURE International",
-  "Water Mission",
-  "Bible League",
-  "HCJB Global",
-  "Ethnos360",
-  "ReachGlobal",
-  "SIM",
-  "TEAM",
-  "Pioneers",
-  "Medical Teams",
-];
