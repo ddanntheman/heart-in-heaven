@@ -418,8 +418,8 @@ function DonutChart() {
   const fundraisingOffset = -(programDash + adminDash);
 
   return (
-    <div className="relative w-64 h-64">
-      <svg viewBox="0 0 200 200" className="w-full h-full -rotate-90">
+    <div className="relative">
+      <svg viewBox="0 0 200 200" className="w-64 h-64 -rotate-90">
         {/* Programs */}
         <circle
           cx="100"

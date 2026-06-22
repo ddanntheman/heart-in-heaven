@@ -64,14 +64,16 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
     }
 
     let start: number | null = null;
+    let frameId: number;
     const step = (timestamp: number) => {
       if (!start) start = timestamp;
       const progress = Math.min((timestamp - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       setCurrent(eased * target);
-      if (progress < 1) requestAnimationFrame(step);
+      if (progress < 1) frameId = requestAnimationFrame(step);
     };
-    requestAnimationFrame(step);
+    frameId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frameId);
   }, [target]);
 
   const formatted = isDecimal ? current.toFixed(1) : Math.round(current);

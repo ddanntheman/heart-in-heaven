@@ -38,7 +38,7 @@ export function StoryCard({
               {category}
             </span>
             <time className="font-body text-xs text-warm-300" dateTime={date}>
-              {new Date(date).toLocaleDateString("en-US", {
+              {new Date(date + "T00:00:00").toLocaleDateString("en-US", {
                 month: "long",
                 day: "numeric",
                 year: "numeric",
