@@ -21,23 +21,54 @@ const ibmPlex = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Heart In Heaven",
+    default: "Heart In Heaven | Donate to Christian Relief and Education in Liberia",
     template: "%s | Heart In Heaven",
   },
   description:
-    "One gift. Twenty ministries. Eternal impact. Heart In Heaven pools your monthly giving across 20+ vetted Christian relief partners.",
+    "Heart In Heaven is a 501(c)(3) nonprofit that pools your monthly donation across 20+ vetted Christian relief partners and funds education in Liberia. One gift. Twenty ministries. Eternal impact.",
   metadataBase: new URL("https://heartinheaven.org"),
+  keywords: [
+    "donate to Liberia",
+    "Christian nonprofit",
+    "leveraged giving",
+    "donate to Christian charity",
+    "Liberia education",
+    "nonprofit donation",
+    "Heart In Heaven",
+    "501c3 charity",
+    "give to multiple nonprofits",
+    "Christian relief",
+    "donate to Africa",
+    "feed children Liberia",
+  ],
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Heart In Heaven",
+    title: "Heart In Heaven | Donate to Christian Relief and Education in Liberia",
+    description:
+      "Pool your monthly donation across 20+ vetted Christian relief partners. Fund education, meals, and church-led development in Liberia.",
+    images: [
+      {
+        url: "/images/hero-liberia.jpg",
+        width: 3024,
+        height: 4032,
+        alt: "Students at Champion Academy in Paynesville, Liberia",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    title: "Heart In Heaven | One gift. Twenty ministries. Eternal impact.",
+    description:
+      "Pool your monthly donation across 20+ vetted Christian relief partners and fund education in Liberia.",
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "https://heartinheaven.org",
   },
 };
 

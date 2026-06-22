@@ -7,15 +7,15 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Newsletter } from "@/components/Newsletter";
 
 export const metadata: Metadata = {
-  title: "Heart In Heaven — One gift. Twenty ministries. Eternal impact.",
+  title: "Heart In Heaven | One gift. Twenty ministries. Eternal impact.",
   description:
-    "Heart In Heaven pools your monthly giving across 20+ vetted Christian relief partners so every dollar reaches more of the least of these.",
+    "Heart In Heaven pools your monthly giving across 20+ vetted Christian relief partners so every dollar reaches more of the vulnerable in Liberia and beyond.",
 };
 
 export default function HomePage() {
   return (
     <>
-      {/* SECTION 1 — Hero */}
+      {/* SECTION 1 - Hero */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-indigo-800">
         <Image
           src="/images/hero-liberia.jpg"
@@ -32,12 +32,12 @@ export default function HomePage() {
             </h1>
             <p className="font-body text-lead text-cream/80 mt-6 max-w-xl">
               Heart In Heaven pools your monthly giving across 20+ vetted
-              Christian relief partners so every dollar reaches more of the
-              least of these.
+              Christian relief partners so every dollar reaches more of those
+              in need.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <Button href="/give" variant="primary">
-                Become a Heart Partner — $40/mo
+                Become a Heart Partner: $40/mo
               </Button>
               <Button href="/give?frequency=once" variant="ghost" className="text-cream hover:text-gold-400 border-transparent">
                 or give once &rarr;
@@ -58,7 +58,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* SECTION 2 — The Problem */}
+      {/* SECTION 2 - The Problem */}
       <section className="bg-cream section-padding">
         <div className="container-main">
           <SectionHeading
@@ -79,14 +79,14 @@ export default function HomePage() {
             />
             <StatBlock
               value="1.4"
-              label="average charities per US Christian donor — leaving thousands of ministries unreached"
+              label="average charities per US Christian donor leaving thousands of ministries unreached"
               source="Barna Group"
             />
           </div>
         </div>
       </section>
 
-      {/* SECTION 3 — How Leveraged Giving Works */}
+      {/* SECTION 3 - How Leveraged Giving Works */}
       <section className="bg-cream-2 section-padding">
         <div className="container-main">
           <SectionHeading
@@ -115,7 +115,7 @@ export default function HomePage() {
             />
           </div>
           <p className="font-body text-base text-warm-500 text-center mt-10 max-w-xl mx-auto">
-            Like a mutual fund for giving — one gift does the work of twenty.
+            Like a mutual fund for giving: one gift does the work of twenty.
             Every dollar is split evenly across vetted Christian relief partners
             serving the global poor.
           </p>
@@ -127,7 +127,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 4 — Where Your Money Goes */}
+      {/* SECTION 4 - Where Your Money Goes */}
       <section className="bg-cream section-padding">
         <div className="container-main">
           <SectionHeading
@@ -167,7 +167,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 5 — Spotlight: Launch Liberia */}
+      {/* SECTION 5 - Spotlight: Launch Liberia */}
       <section className="bg-indigo-600 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="relative min-h-[400px] lg:min-h-[500px]">
@@ -193,14 +193,14 @@ export default function HomePage() {
                 at a time, the cycle of poverty breaks.
               </p>
               <Button href="/give?campaign=liberia" variant="primary">
-                Fuel a Student — $50/mo feeds one child for a year
+                Fuel a Student: $50/mo feeds one child for a year
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 6 — Heart Partner Testimonial */}
+      {/* SECTION 6 - Heart Partner Testimonial */}
       <section className="bg-cream section-padding">
         <div className="container-main">
           <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 items-center max-w-3xl mx-auto">
@@ -238,7 +238,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 7 — Founder's Invitation */}
+      {/* SECTION 7 - Founder's Invitation */}
       <section className="bg-cream-2 section-padding">
         <div className="container-narrow text-center">
           <SectionHeading
@@ -277,7 +277,70 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 8 — Final Ask */}
+      <section className="bg-cream section-padding">
+        <div className="container-main">
+          <SectionHeading
+            eyebrow="Choose your impact"
+            title="A giving experience built around real places and real needs"
+            subtitle="Most donation pages ask for an amount first. Heart In Heaven starts with what your gift can become: a meal, a classroom, a savings group, a Bible, a medical visit, or a clean water project."
+            align="center"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {generosityPaths.map((path) => (
+              <div
+                key={path.title}
+                className="group bg-paper rounded-2xl border border-warm-100 overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={path.image}
+                    alt={path.alt}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+                <div className="p-5">
+                  <p className="font-body text-xs font-semibold uppercase tracking-[0.16em] text-gold-600 mb-2">
+                    {path.eyebrow}
+                  </p>
+                  <h3 className="font-display font-semibold text-lg text-indigo-700 mb-2">
+                    {path.title}
+                  </h3>
+                  <p className="font-body text-sm text-warm-500 leading-relaxed">
+                    {path.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream-2 section-padding">
+        <div className="container-main">
+          <SectionHeading
+            eyebrow="Donor answer hub"
+            title="Quick answers for people searching where to give"
+            subtitle="Short, direct answers help donors compare nonprofit options and understand how Heart In Heaven serves Liberia and partner ministries worldwide."
+            align="center"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {answerCards.map((item) => (
+              <div key={item.question} className="bg-paper rounded-xl border border-warm-100 p-6">
+                <h3 className="font-display font-semibold text-base text-indigo-700 mb-3">
+                  {item.question}
+                </h3>
+                <p className="font-body text-sm text-warm-500 leading-relaxed">
+                  {item.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final Ask */}
       <section className="relative bg-indigo-700 section-padding overflow-hidden">
         <Image
           src="/images/community-liberia.jpg"
@@ -291,12 +354,12 @@ export default function HomePage() {
             Will you be one of the next 100 Heart Partners?
           </h2>
           <p className="font-body text-lead text-cream/70 mb-8 max-w-xl mx-auto">
-            Your $40/month reaches 20+ ministries — feeding students, training
+            Your $40/month reaches 20+ ministries: feeding students, training
             leaders, and bringing clean water to communities.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="/give" variant="primary">
-              Start your monthly gift — $40/mo
+              Start your monthly gift: $40/mo
             </Button>
           </div>
           <div className="mt-6">
@@ -477,6 +540,74 @@ function Legend({ color, label }: { color: string; label: string }) {
     </span>
   );
 }
+
+const generosityPaths = [
+  {
+    eyebrow: "Liberia education",
+    title: "Donate to Christian education in Liberia",
+    description:
+      "Help students at Heart In Heaven Digital Academy learn through SmartBox-powered lessons, caring teachers, and local church partnership.",
+    image: "/images/champion-academy.jpg",
+    alt: "Students from Heart In Heaven Digital Academy in Liberia",
+  },
+  {
+    eyebrow: "School meals",
+    title: "Feed children so they can stay in school",
+    description:
+      "Fuel First helps provide weekday meals for students who may not have reliable food at home.",
+    image: "/images/school-lunches.jpg",
+    alt: "Children in Liberia learning with a classroom laptop",
+  },
+  {
+    eyebrow: "Local leadership",
+    title: "Fund leaders already trusted in Liberia",
+    description:
+      "Support pastors, teachers, and local facilitators who know the families and neighborhoods they serve.",
+    image: "/images/founders-vision.jpg",
+    alt: "Angelique with ministry partners and local leaders in Liberia",
+  },
+  {
+    eyebrow: "Leveraged giving",
+    title: "Give once and reach many causes",
+    description:
+      "Your monthly gift is distributed across vetted Christian nonprofits serving food, water, medical, education, and discipleship needs.",
+    image: "/images/give-recipient.jpg",
+    alt: "Angelique serving children in Liberia",
+  },
+];
+
+const answerCards = [
+  {
+    question: "What is a good nonprofit to donate to for Liberia?",
+    answer:
+      "Heart In Heaven is a 501(c)(3) nonprofit focused on education, meals, and church-led development in Liberia through Heart In Heaven Digital Academy and Launch Liberia.",
+  },
+  {
+    question: "How can I donate to help children in Liberia?",
+    answer:
+      "You can give monthly or once through Heart In Heaven. Gifts support school meals, digital learning, and local partners serving students in Paynesville and beyond.",
+  },
+  {
+    question: "Can one donation support multiple Christian nonprofits?",
+    answer:
+      "Yes. Heart In Heaven pools monthly gifts and distributes them evenly across 20+ vetted Christian relief partners so one donation can support many trusted ministries.",
+  },
+  {
+    question: "Are donations tax deductible?",
+    answer:
+      "Heart In Heaven is a registered 501(c)(3) nonprofit with EIN 87-4020929. Donations are tax deductible to the extent allowed by law.",
+  },
+  {
+    question: "What makes Heart In Heaven different from child sponsorship?",
+    answer:
+      "Traditional child sponsorship usually funds one child through one organization. Heart In Heaven combines direct Liberia programs with leveraged giving across many vetted ministries.",
+  },
+  {
+    question: "Where does my monthly gift go?",
+    answer:
+      "Monthly gifts support vetted Christian relief partners and specific campaigns like Launch Liberia, including education, meals, savings groups, clean water, medical care, and Bible translation.",
+  },
+];
 
 const partnerMinistries = [
   "Compassion",

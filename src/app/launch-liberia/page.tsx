@@ -5,9 +5,12 @@ import { StatBlock } from "@/components/StatBlock";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Launch Liberia",
+  title: "Launch Liberia | Donate to Education and Meals in Liberia",
   description:
-    "80% unemployment. Generations without lunch. Heart In Heaven is partnering with the Liberian Church to change that — one student, one savings group, one family at a time.",
+    "Heart In Heaven partners with the Liberian Church to fund school meals, savings groups, and digital education at Champion Academy in Paynesville, Liberia. Donate to help children in Liberia today.",
+  alternates: {
+    canonical: "https://heartinheaven.org/launch-liberia",
+  },
 };
 
 export default function LaunchLiberiaPage() {
@@ -33,14 +36,14 @@ export default function LaunchLiberiaPage() {
             </h1>
             <p className="font-body text-lead text-cream/80">
               80% unemployment. Generations without lunch. We&rsquo;re
-              partnering with the Liberian Church to change that — one
+              partnering with the Liberian Church to change that: one
               student, one savings group, one family at a time.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Section 1 — The Need */}
+      {/* Section 1 - The Need */}
       <section className="bg-cream section-padding">
         <div className="container-main">
           <SectionHeading
@@ -70,21 +73,21 @@ export default function LaunchLiberiaPage() {
               Liberia is one of the poorest countries on earth. After 14 years
               of civil war and the Ebola crisis, an entire generation grew up
               without reliable access to education, food, or economic
-              opportunity. In Paynesville — Monrovia&rsquo;s most densely
-              populated suburb — families scrape by on less than $2 a day.
+              opportunity. In Paynesville (Monrovia&rsquo;s most densely
+              populated suburb) families scrape by on less than $2 a day.
               Children come to school hungry, if they come at all.
             </p>
             <p className="font-body text-base text-warm-500 leading-relaxed mt-4">
               But the Liberian Church is strong. Local leaders, pastors, and
               teachers are the backbone of community life. What they need is
-              not another foreign program — it&rsquo;s fuel. Resources.
+              not another foreign program: it&rsquo;s fuel. Resources.
               Partnership. Heart In Heaven provides exactly that.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Section 2 — What We're Doing */}
+      {/* Section 2 - What We're Doing */}
       <section className="bg-cream-2 section-padding">
         <div className="container-main">
           <SectionHeading
@@ -96,7 +99,7 @@ export default function LaunchLiberiaPage() {
             <ProgramCard
               title="Fuel First"
               subtitle="School lunches at Champion Academy"
-              description="Every weekday, students at Champion Academy receive a hot meal — for many, their only meal of the day. When children eat, they stay in school. When they stay in school, futures change."
+              description="Every weekday, students at Champion Academy receive a hot meal. For many, this is their only meal of the day. When children eat, they stay in school. When they stay in school, futures change."
               stat="$50/mo feeds one student for a year"
               image="/images/school-lunches.jpg"
               imageAlt="Students eating lunch at Champion Academy"
@@ -104,7 +107,7 @@ export default function LaunchLiberiaPage() {
             <ProgramCard
               title="Chalmers Savings Groups"
               subtitle="Financial discipleship training"
-              description="Based on the Chalmers Center model, we train local facilitators to lead savings groups. Families learn to save, budget, and invest — breaking the cycle of dependency and building lasting economic resilience."
+              description="Based on the Chalmers Center model, we train local facilitators to lead savings groups. Families learn to save, budget, and invest, breaking the cycle of dependency and building lasting economic resilience."
               stat="$5,000 trains 50 facilitators"
               image="/images/savings-groups.jpg"
               imageAlt="A savings group meeting in Paynesville, Liberia"
@@ -121,7 +124,7 @@ export default function LaunchLiberiaPage() {
         </div>
       </section>
 
-      {/* Section 3 — Partners on the ground */}
+      {/* Section 3 - Partners on the ground */}
       <section className="bg-cream section-padding">
         <div className="container-main">
           <SectionHeading
@@ -133,7 +136,7 @@ export default function LaunchLiberiaPage() {
             {[
               {
                 name: "ELWA",
-                desc: "Eternal Love Winning Africa — one of West Africa's oldest and most trusted Christian organizations.",
+                desc: "Eternal Love Winning Africa: one of West Africa's oldest and most trusted Christian organizations.",
               },
               {
                 name: "Peachtree UMC",
@@ -165,7 +168,7 @@ export default function LaunchLiberiaPage() {
         </div>
       </section>
 
-      {/* Section 4 — Why Liberia */}
+      {/* Section 4 - Why Liberia */}
       <section className="bg-indigo-600 section-padding">
         <div className="container-narrow text-center">
           <p className="font-body font-medium text-eyebrow tracking-[0.18em] uppercase text-gold-400 mb-3">
@@ -176,18 +179,18 @@ export default function LaunchLiberiaPage() {
           </h2>
           <p className="font-body text-base text-cream/70 leading-relaxed">
             Liberia was founded by freed American slaves in 1847. Its ties to
-            the United States are deep — its flag mirrors the Stars and
+            the United States are deep: its flag mirrors the Stars and
             Stripes, and English is its official language. After devastating
             civil wars and the Ebola crisis, Liberia is rebuilding. The Church
             is the most trusted institution in the country, and local leaders
             are ready for partnership. Heart In Heaven chose Liberia not as a
-            project, but as a family — a long-term commitment to walk
+            project, but as a family: a long-term commitment to walk
             alongside the Liberian Church as it leads its own transformation.
           </p>
         </div>
       </section>
 
-      {/* Section 5 — Give to Launch Liberia */}
+      {/* Section 5 - Give to Launch Liberia */}
       <section className="bg-cream section-padding">
         <div className="container-main text-center">
           <h2 className="font-display font-semibold text-h2 text-indigo-700 mb-4">
@@ -197,14 +200,14 @@ export default function LaunchLiberiaPage() {
             Every gift fuels education, economic development, and dignity for
             families in Paynesville.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button href="/give?campaign=liberia" variant="primary">
-              Fuel a Student — $50/mo
-            </Button>
-            <Button href="/give" variant="secondary">
-              Give to all 20+ ministries
-            </Button>
-          </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button href="/give?campaign=liberia" variant="primary">
+                Fuel a Student: $50/mo
+              </Button>
+              <Button href="/give" variant="secondary">
+                Give to all 20+ ministries
+              </Button>
+            </div>
         </div>
       </section>
 

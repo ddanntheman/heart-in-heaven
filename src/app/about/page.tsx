@@ -5,16 +5,19 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Heart In Heaven | Team, Partners, and Financials",
   description:
-    "Meet the Heart In Heaven team, our partner ministries, view financials, read our FAQ, and get in touch.",
+    "Meet founder Angelique C. McGlotten, explore 20+ vetted Christian relief partners, review financials, and read our donor FAQ. Heart In Heaven is a 501(c)(3) nonprofit.",
+  alternates: {
+    canonical: "https://heartinheaven.org/about",
+  },
 };
 
 const team = [
   {
     name: "Angelique C. McGlotten",
     role: "Founder & Executive Director",
-    bio: "Born and raised in Liberia, Angelique emigrated to the United States following a coup — but Liberia has always been home. After returning thirty-three years later, she founded Heart In Heaven with a singular conviction: every child in Liberia deserves access to quality education.",
+    bio: "Born and raised in Liberia, Angelique emigrated to the United States following a coup: but Liberia has always been home. After returning thirty-three years later, she founded Heart In Heaven with a singular conviction: every child in Liberia deserves access to quality education.",
     image: "/images/team-angelique.jpg",
   },
 ];
