@@ -93,7 +93,7 @@ export function InteractiveTransparency() {
               onClick={() => setGiftAmount(amount)}
               className={`rounded-pill px-5 py-3 font-body font-semibold transition-all ${
                 giftAmount === amount
-                  ? "bg-gold-400 text-charcoal shadow-lg shadow-gold-900/20"
+                  ? "bg-gold-400 text-charcoal shadow-lg shadow-gold-800/20"
                   : "bg-cream/10 text-cream hover:bg-cream/20"
               }`}
             >
@@ -163,9 +163,9 @@ export function InteractiveTransparency() {
         </div>
       </div>
 
-      <div className="rounded-[2rem] bg-paper border border-warm-100 p-6 md:p-8 shadow-xl shadow-warm-900/5">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:items-end mb-8">
-          <div>
+      <div className="rounded-[2rem] bg-paper border border-warm-100 p-6 md:p-8 shadow-xl shadow-warm-700/5 min-w-0 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-6 lg:items-end mb-8 min-w-0">
+          <div className="min-w-0">
             <p className="font-body font-medium text-eyebrow tracking-[0.18em] uppercase text-gold-500 mb-3">
               Partner map
             </p>
@@ -173,8 +173,8 @@ export function InteractiveTransparency() {
               One monthly gift reaches many mission fronts.
             </h3>
           </div>
-          <div className="rounded-2xl bg-cream px-5 py-4 min-w-44">
-            <p className="font-body text-xs uppercase tracking-[0.14em] text-warm-400 mb-1">
+          <div className="rounded-2xl bg-cream px-5 py-4 lg:min-w-44">
+            <p className="font-body text-xs uppercase tracking-[0.14em] text-warm-300 mb-1">
               Equal share
             </p>
             <p className="font-display font-semibold text-3xl text-indigo-700">
@@ -184,7 +184,7 @@ export function InteractiveTransparency() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 mb-6">
           {partnerMinistries.map((partner) => (
             <button
               key={partner.name}
@@ -201,36 +201,36 @@ export function InteractiveTransparency() {
               <span className="font-body font-semibold text-sm text-indigo-700 leading-tight block">
                 {partner.name}
               </span>
-              <span className="font-body text-xs text-warm-400 mt-2 block">
+              <span className="font-body text-xs text-warm-300 mt-2 block">
                 {partner.focus}
               </span>
             </button>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center rounded-2xl bg-cream p-5 md:p-6">
-          <div>
+        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_auto] gap-6 items-center rounded-2xl bg-cream p-5 md:p-6 min-w-0 overflow-hidden">
+          <div className="min-w-0">
             <p className="font-body text-xs uppercase tracking-[0.14em] text-gold-500 mb-2">
               Active partner
             </p>
             <p className="font-display font-semibold text-2xl text-indigo-700">
               {activePartner.name}
             </p>
-            <p className="font-body text-warm-500 mt-1">
+            <p className="font-body text-warm-500 mt-1 break-words">
               Focus: {activePartner.focus}. Region: {activePartner.region}. Estimated monthly share from your gift: ${monthly.partnerShare.toFixed(2)}.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row md:flex-col gap-3">
-            <Button href="/about#financials" variant="ghost">
-              Read our latest 990 &rarr;
+          <div className="flex flex-col gap-3 w-full xl:w-48">
+            <Button href="/about#financials" variant="ghost" className="w-full whitespace-normal text-center">
+              Latest 990 &rarr;
             </Button>
-            <Button href="/how-it-works" variant="secondary">
-              See vetting process
+            <Button href="/how-it-works" variant="secondary" className="w-full whitespace-normal text-center">
+              Vetting process
             </Button>
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
           <Metric value={`$${monthly.programs.toFixed(0)}`} label="to programs monthly" />
           <Metric value={`$${monthly.annualPrograms.toFixed(0)}`} label="to programs yearly" />
           <Metric value="20+" label="vetted partners" />

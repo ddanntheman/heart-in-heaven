@@ -13,154 +13,108 @@ export const metadata: Metadata = {
   },
 };
 
+const programs = [
+  {
+    title: "Fuel First",
+    subtitle: "School lunches at Champion Academy",
+    description:
+      "Students receive a hot meal so hunger does not pull them out of the classroom. When children eat, they stay. When they stay, futures change.",
+    stat: "$50/mo feeds one student for a year",
+    image: "/images/school-lunches.jpg",
+    imageAlt: "Students receiving lunch at Champion Academy",
+  },
+  {
+    title: "Digital Academy",
+    subtitle: "SmartBox-powered learning",
+    description:
+      "Offline-first digital tools bring curriculum, teacher support, and computer access into classrooms where infrastructure is limited.",
+    stat: "130 students across two campuses",
+    image: "/images/liberia-digital-class.jpg",
+    imageAlt: "Champion Academy students learning with computers in Liberia",
+  },
+  {
+    title: "Savings Groups",
+    subtitle: "Economic discipleship",
+    description:
+      "Local facilitators help families save, budget, build resilience, and move toward lasting independence through church-based training.",
+    stat: "$5,000 trains 50 facilitators",
+    image: "/images/savings-groups.jpg",
+    imageAlt: "A savings group meeting in Paynesville, Liberia",
+  },
+];
+
+const partners = [
+  {
+    name: "ELWA",
+    desc: "A trusted Christian institution serving Liberia through education, media, health, and community ministry.",
+  },
+  {
+    name: "Peachtree UMC",
+    desc: "A church partner providing infrastructure support, prayer, and coordination for work in Monrovia.",
+  },
+  {
+    name: "Red Meets Green",
+    desc: "A social enterprise helping connect Liberian agriculture and community development with broader opportunity.",
+  },
+];
+
+const fieldNotes = [
+  "Champion Academy is fully accredited with the Liberian Ministry of Education.",
+  "SmartBox technology supports digital learning even when internet access is limited.",
+  "Local pastors, teachers, and facilitators lead the work on the ground.",
+];
+
 export default function LaunchLiberiaPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-indigo-800">
+      <section className="relative min-h-[82vh] overflow-hidden bg-night flex items-end">
         <Image
-          src="/images/champion-academy.jpg"
-          alt="Champion Academy campus in Paynesville, Liberia"
+          src="/images/liberia-school-wall.jpg"
+          alt="Champion Academy students and Heart In Heaven leaders in Paynesville, Liberia"
           fill
-          className="object-cover opacity-50"
+          className="object-cover opacity-70"
           priority
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-night via-indigo-900/70 to-night/10" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-night to-transparent" />
         <div className="relative z-10 container-main py-12u md:py-16u">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <p className="font-body font-medium text-eyebrow tracking-[0.18em] uppercase text-gold-400 mb-3">
               Where we work
             </p>
-            <h1 className="font-display font-semibold text-h1 text-cream mb-4">
-              Launch Liberia
+            <h1 className="font-display font-semibold text-display text-cream mb-5 text-balance">
+              Launch Liberia is where strategy becomes a classroom.
             </h1>
-            <p className="font-body text-lead text-cream/80">
-              80% unemployment. Generations without lunch. We&rsquo;re
-              partnering with the Liberian Church to change that: one
-              student, one savings group, one family at a time.
+            <p className="font-body text-lead text-cream/80 max-w-2xl">
+              In Paynesville, Heart In Heaven helps fund meals, digital
+              education, and economic discipleship through trusted Liberian
+              leaders.
             </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Button href="/give?campaign=liberia" variant="primary">
+                Fund Launch Liberia
+              </Button>
+              <Button href="#programs" variant="light">
+                Explore programs
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 1 - The Need */}
-      <section className="bg-cream section-padding">
+      <section className="bg-night pb-12u">
         <div className="container-main">
-          <SectionHeading
-            eyebrow="The need"
-            title="Liberia by the numbers"
-            align="center"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-12">
-            <StatBlock
-              value="80%"
-              label="unemployment rate"
-              source="World Bank, 2024"
-            />
-            <StatBlock
-              value="64%"
-              label="of the population lives below the poverty line"
-              source="UNDP"
-            />
-            <StatBlock
-              value="44%"
-              label="of children are stunted from malnutrition"
-              source="UNICEF"
-            />
-          </div>
-          <div className="container-narrow">
-            <p className="font-body text-base text-warm-500 leading-relaxed">
-              Liberia is one of the poorest countries on earth. After 14 years
-              of civil war and the Ebola crisis, an entire generation grew up
-              without reliable access to education, food, or economic
-              opportunity. In Paynesville (Monrovia&rsquo;s most densely
-              populated suburb) families scrape by on less than $2 a day.
-              Children come to school hungry, if they come at all.
-            </p>
-            <p className="font-body text-base text-warm-500 leading-relaxed mt-4">
-              But the Liberian Church is strong. Local leaders, pastors, and
-              teachers are the backbone of community life. What they need is
-              not another foreign program: it&rsquo;s fuel. Resources.
-              Partnership. Heart In Heaven provides exactly that.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2 - What We're Doing */}
-      <section className="bg-cream-2 section-padding">
-        <div className="container-main">
-          <SectionHeading
-            eyebrow="Our programs"
-            title="Three pillars of transformation"
-            align="center"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <ProgramCard
-              title="Fuel First"
-              subtitle="School lunches at Champion Academy"
-              description="Every weekday, students at Champion Academy receive a hot meal. For many, this is their only meal of the day. When children eat, they stay in school. When they stay in school, futures change."
-              stat="$50/mo feeds one student for a year"
-              image="/images/school-lunches.jpg"
-              imageAlt="Students eating lunch at Champion Academy"
-            />
-            <ProgramCard
-              title="Chalmers Savings Groups"
-              subtitle="Financial discipleship training"
-              description="Based on the Chalmers Center model, we train local facilitators to lead savings groups. Families learn to save, budget, and invest, breaking the cycle of dependency and building lasting economic resilience."
-              stat="$5,000 trains 50 facilitators"
-              image="/images/savings-groups.jpg"
-              imageAlt="A savings group meeting in Paynesville, Liberia"
-            />
-            <ProgramCard
-              title="Founder's Vision"
-              subtitle="The long-arc plan for Liberia"
-              description="Beyond immediate relief, Heart In Heaven is working toward a self-sustaining ecosystem in Liberia: local leadership development, vocational training, and church-based community care."
-              stat="A 10-year partnership commitment"
-              image="/images/founders-vision.jpg"
-              imageAlt="Community leaders meeting in Paynesville"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Section 3 - Partners on the ground */}
-      <section className="bg-cream section-padding">
-        <div className="container-main">
-          <SectionHeading
-            eyebrow="Local partners"
-            title="Partners on the ground"
-            align="center"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 -mt-12 relative z-10">
             {[
-              {
-                name: "ELWA",
-                desc: "Eternal Love Winning Africa: one of West Africa's oldest and most trusted Christian organizations.",
-              },
-              {
-                name: "Peachtree UMC",
-                desc: "Providing infrastructure support and partnership coordination in Monrovia.",
-              },
-              {
-                name: "Red Meets Green",
-                desc: "Social enterprise connecting Liberian agriculture with international markets.",
-              },
-            ].map((partner) => (
-              <div
-                key={partner.name}
-                className="bg-paper rounded-xl border border-warm-100 p-6 text-center"
-              >
-                <div className="w-16 h-16 rounded-full bg-indigo-50 flex items-center justify-center mx-auto mb-4">
-                  <span className="font-display font-semibold text-lg text-indigo-600">
-                    {partner.name.charAt(0)}
-                  </span>
-                </div>
-                <h3 className="font-display font-semibold text-base text-indigo-700 mb-2">
-                  {partner.name}
-                </h3>
-                <p className="font-body text-sm text-warm-500">
-                  {partner.desc}
+              ["Paynesville", "Monrovia suburb"],
+              ["130", "students served"],
+              ["3", "program pillars"],
+            ].map(([value, label]) => (
+              <div key={value} className="rounded-[1.5rem] border border-cream/10 bg-cream/10 p-6 text-cream backdrop-blur-md">
+                <p className="font-display text-4xl font-semibold">{value}</p>
+                <p className="font-body text-sm uppercase tracking-[0.16em] text-cream/55">
+                  {label}
                 </p>
               </div>
             ))}
@@ -168,9 +122,145 @@ export default function LaunchLiberiaPage() {
         </div>
       </section>
 
-      {/* Section 4 - Why Liberia */}
-      <section className="bg-indigo-600 section-padding">
-        <div className="container-narrow text-center">
+      <section className="bg-cream section-padding">
+        <div className="container-main">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_420px] gap-12 items-center">
+            <div>
+              <SectionHeading
+                eyebrow="The need"
+                title="Liberia by the numbers"
+                subtitle="The numbers are sobering, but they are not the whole story. The Church, local educators, and families are ready for durable partnership."
+              />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <StatBlock value="80%" label="unemployment rate" source="World Bank, 2024" />
+                <StatBlock value="64%" label="living below the poverty line" source="UNDP" />
+                <StatBlock value="44%" label="children affected by stunting" source="UNICEF" />
+              </div>
+            </div>
+            <div className="rounded-[2rem] bg-paper border border-warm-100 p-6 shadow-sm">
+              <p className="font-display text-h3 font-semibold text-indigo-700 mb-4">
+                The opportunity is local leadership.
+              </p>
+              <div className="space-y-4 font-body text-sm leading-relaxed text-warm-500">
+                <p>
+                  After civil war and the Ebola crisis, an entire generation
+                  grew up without reliable access to education, food, or
+                  economic opportunity.
+                </p>
+                <p>
+                  Heart In Heaven does not replace Liberian leadership. We fuel
+                  it with resources, technology, training, and steady donor
+                  partnership.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream-2 section-padding" id="programs">
+        <div className="container-main">
+          <SectionHeading
+            eyebrow="Our programs"
+            title="Three pillars of transformation"
+            subtitle="Each pillar addresses a pressure point that keeps children and families from flourishing."
+            align="center"
+          />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {programs.map((program) => (
+              <ProgramCard key={program.title} {...program} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream section-padding">
+        <div className="container-main">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 items-stretch">
+            <div className="rounded-[2rem] bg-indigo-600 p-7 md:p-8 text-cream shadow-lg">
+              <p className="font-body text-xs uppercase tracking-[0.18em] text-gold-300 mb-4">
+                Field notes
+              </p>
+              <h2 className="font-display text-h2 font-semibold mb-6">
+                What makes this work different
+              </h2>
+              <div className="space-y-4">
+                {fieldNotes.map((note) => (
+                  <div key={note} className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-gold-400 shrink-0" />
+                    <p className="font-body text-sm leading-relaxed text-cream/75">
+                      {note}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative min-h-64 overflow-hidden rounded-[2rem]">
+                <Image
+                  src="/images/liberia-assembly.jpg"
+                  alt="Students gathered for school assembly in Liberia"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 30vw"
+                />
+              </div>
+              <div className="relative min-h-64 overflow-hidden rounded-[2rem] translate-y-8">
+                <Image
+                  src="/images/smartbox-laptops.jpg"
+                  alt="SmartBox equipment and laptops for digital learning"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 30vw"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream-2 section-padding">
+        <div className="container-main">
+          <SectionHeading
+            eyebrow="Local partners"
+            title="Trusted partners on the ground"
+            subtitle="The strongest work in Liberia is led by people who know the place, the language, and the daily realities families face."
+            align="center"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {partners.map((partner) => (
+              <article
+                key={partner.name}
+                className="group rounded-[1.5rem] border border-warm-100 bg-paper p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gold-300 hover:shadow-md"
+              >
+                <div className="w-16 h-16 rounded-full bg-indigo-50 flex items-center justify-center mx-auto mb-5 group-hover:bg-gold-400">
+                  <span className="font-display font-semibold text-lg text-indigo-600 group-hover:text-charcoal">
+                    {partner.name.charAt(0)}
+                  </span>
+                </div>
+                <h3 className="font-display font-semibold text-lg text-indigo-700 mb-2">
+                  {partner.name}
+                </h3>
+                <p className="font-body text-sm leading-relaxed text-warm-500">
+                  {partner.desc}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-indigo-700 section-padding">
+        <div className="absolute inset-0 opacity-20">
+          <Image
+            src="/images/liberia-team-group.jpg"
+            alt="Heart In Heaven leaders and partners in Liberia"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+        <div className="relative container-narrow text-center">
           <p className="font-body font-medium text-eyebrow tracking-[0.18em] uppercase text-gold-400 mb-3">
             Why Liberia
           </p>
@@ -179,19 +269,15 @@ export default function LaunchLiberiaPage() {
           </h2>
           <p className="font-body text-base text-cream/70 leading-relaxed">
             Liberia was founded by freed American slaves in 1847. Its ties to
-            the United States are deep: its flag mirrors the Stars and
-            Stripes, and English is its official language. After devastating
-            civil wars and the Ebola crisis, Liberia is rebuilding. The Church
-            is the most trusted institution in the country, and local leaders
-            are ready for partnership. Heart In Heaven chose Liberia not as a
-            project, but as a family: a long-term commitment to walk
-            alongside the Liberian Church as it leads its own transformation.
+            the United States are deep, English is its official language, and
+            the Church remains one of the most trusted institutions in the
+            country. Heart In Heaven chose Liberia as a long-term family
+            commitment to walk beside local leaders as they build.
           </p>
         </div>
       </section>
 
-      {/* Section 5 - Give to Launch Liberia */}
-      <section className="bg-cream section-padding">
+      <section className="bg-cream section-padding-tight">
         <div className="container-main text-center">
           <h2 className="font-display font-semibold text-h2 text-indigo-700 mb-4">
             Fund the future of Liberia
@@ -200,18 +286,17 @@ export default function LaunchLiberiaPage() {
             Every gift fuels education, economic development, and dignity for
             families in Paynesville.
           </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/give?campaign=liberia" variant="primary">
-                Fuel a Student: $50/mo
-              </Button>
-              <Button href="/give" variant="secondary">
-                Give to all 20+ ministries
-              </Button>
-            </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button href="/give?campaign=liberia" variant="primary">
+              Fuel a Student: $50/mo
+            </Button>
+            <Button href="/give" variant="secondary">
+              Give to all 20+ ministries
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* BreadcrumbList Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -255,28 +340,32 @@ function ProgramCard({
   imageAlt: string;
 }) {
   return (
-    <div className="bg-paper rounded-xl border border-warm-100 overflow-hidden">
-      <div className="relative aspect-[4/3]">
+    <article className="group overflow-hidden rounded-[2rem] border border-warm-100 bg-paper shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+      <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={image}
           alt={imageAlt}
           fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 1024px) 100vw, 33vw"
         />
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night/80 to-transparent p-5">
+          <p className="font-body text-xs uppercase tracking-[0.18em] text-gold-300">
+            {subtitle}
+          </p>
+        </div>
       </div>
       <div className="p-6">
-        <h3 className="font-display font-semibold text-lg text-indigo-700 mb-1">
+        <h3 className="font-display font-semibold text-h3 text-indigo-700 mb-3">
           {title}
         </h3>
-        <p className="font-body text-xs text-warm-300 uppercase tracking-wider mb-3">
-          {subtitle}
+        <p className="font-body text-sm leading-relaxed text-warm-500 mb-5">
+          {description}
         </p>
-        <p className="font-body text-sm text-warm-500 mb-4">{description}</p>
-        <p className="font-body text-sm font-semibold text-gold-600">
+        <p className="rounded-2xl bg-gold-50 px-4 py-3 font-body text-sm font-semibold text-gold-700">
           {stat}
         </p>
       </div>
-    </div>
+    </article>
   );
 }

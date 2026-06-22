@@ -1,5 +1,7 @@
 import { Metadata } from "next";
-import { StoryCard } from "@/components/StoryCard";
+import Image from "next/image";
+import { SectionHeading } from "@/components/SectionHeading";
+import { StoriesExplorer } from "@/components/StoriesExplorer";
 
 export const metadata: Metadata = {
   title: "Impact Stories from Liberia and Relief Partners",
@@ -24,10 +26,20 @@ const stories = [
     imageAlt: "Mawolo, age 9, eating lunch at Champion Academy",
   },
   {
+    slug: "digital-academy-paynesville",
+    title: "Inside a digital classroom powered by SmartBox",
+    excerpt:
+      "Students gather around offline-first technology that brings lessons, tools, and digital confidence into a classroom without reliable infrastructure.",
+    category: "Liberia",
+    date: "2026-05-24",
+    image: "/images/liberia-digital-class.jpg",
+    imageAlt: "Champion Academy students learning with digital education tools",
+  },
+  {
     slug: "savings-group-paynesville",
     title: "47 facilitators trained. 500 families saving.",
     excerpt:
-      "Chalmers savings groups are transforming economic life in Paynesville. Here's what two years of faithful training looks like.",
+      "Chalmers savings groups are transforming economic life in Paynesville. Here is what two years of faithful training looks like.",
     category: "Liberia",
     date: "2026-05-15",
     image: "/images/story-savings.jpg",
@@ -67,67 +79,54 @@ const stories = [
     slug: "champion-academy-update-q1",
     title: "Q1 2026: Champion Academy enrolls 24 new students",
     excerpt:
-      "Enrollment at Champion Academy continues to grow. Here's an update from the first quarter of 2026.",
+      "Enrollment at Champion Academy continues to grow. Here is an update from the first quarter of 2026.",
     category: "Liberia",
     date: "2026-03-15",
-    image: "/images/story-academy-q1.jpg",
-    imageAlt: "Students in class at Champion Academy",
+    image: "/images/liberia-assembly.jpg",
+    imageAlt: "Students gathered for an assembly at Champion Academy",
   },
 ];
 
 export default function StoriesPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-indigo-600 section-padding-tight">
-        <div className="container-main">
-          <div className="max-w-2xl">
+      <section className="relative overflow-hidden bg-night section-padding-tight">
+        <div className="absolute inset-0 opacity-45">
+          <Image
+            src="/images/liberia-assembly.jpg"
+            alt="Champion Academy students gathered for an assembly in Liberia"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-night via-indigo-900/80 to-night/20" />
+        <div className="relative container-main">
+          <div className="max-w-3xl">
             <p className="font-body font-medium text-eyebrow tracking-[0.18em] uppercase text-gold-400 mb-3">
               Stories
             </p>
-            <h1 className="font-display font-semibold text-h1 text-cream mb-4">
-              Stories of impact
+            <h1 className="font-display font-semibold text-display text-cream mb-5 text-balance">
+              The field reports behind the numbers
             </h1>
-            <p className="font-body text-lead text-cream/70">
-              Real stories from Liberia, our Heart Partners, and the ministries
-              your giving supports.
+            <p className="font-body text-lead text-cream/75">
+              Follow the students, local leaders, donors, and ministry partners
+              who show what leveraged generosity looks like in real life.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Filter + grid */}
       <section className="bg-cream section-padding">
         <div className="container-main">
-          {/* Category filters */}
-          <div className="flex flex-wrap gap-2 mb-10">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                className={`px-4 py-2 rounded-pill font-body text-sm font-medium transition-colors ${
-                  cat === "All"
-                    ? "bg-indigo-600 text-cream"
-                    : "bg-paper border border-warm-200 text-warm-500 hover:border-warm-300"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Stories grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {stories.map((story) => (
-              <StoryCard key={story.slug} {...story} />
-            ))}
-          </div>
-
-          {/* Load more */}
-          <div className="text-center mt-12">
-            <button className="px-6 py-3 bg-paper border border-warm-200 text-warm-500 font-body font-semibold text-sm rounded-md hover:border-warm-300 transition-colors">
-              Load more stories
-            </button>
-          </div>
+          <SectionHeading
+            eyebrow="Explore the archive"
+            title="Stories that make the model tangible"
+            subtitle="Use the filters to move between Liberia field updates, donor perspectives, ministry reports, and reflections."
+            align="center"
+          />
+          <StoriesExplorer categories={categories} stories={stories} />
         </div>
       </section>
     </>

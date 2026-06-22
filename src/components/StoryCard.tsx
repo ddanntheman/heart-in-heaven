@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-interface StoryCardProps {
+export interface StoryCardProps {
   slug: string;
   title: string;
   excerpt: string;
@@ -9,6 +9,7 @@ interface StoryCardProps {
   date: string;
   image: string;
   imageAlt: string;
+  featured?: boolean;
 }
 
 export function StoryCard({
@@ -19,38 +20,46 @@ export function StoryCard({
   date,
   image,
   imageAlt,
+  featured = false,
 }: StoryCardProps) {
   return (
-    <article className="group bg-paper rounded-xl overflow-hidden border border-warm-100 hover:shadow-md transition-shadow duration-200">
-      <Link href={`/stories/${slug}`} className="block">
-        <div className="relative aspect-[16/10] overflow-hidden">
+    <article
+      className={`group overflow-hidden rounded-[2rem] border border-warm-100 bg-paper shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${
+        featured ? "lg:col-span-2 lg:grid lg:grid-cols-[1.05fr_0.95fr]" : ""
+      }`}
+    >
+      <Link href={`/stories/${slug}`} className="block h-full lg:contents">
+        <div className={`relative overflow-hidden ${featured ? "min-h-80" : "aspect-[16/11]"}`}>
           <Image
             src={image}
             alt={imageAlt}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes={featured ? "(max-width: 1024px) 100vw, 55vw" : "(max-width: 768px) 100vw, 33vw"}
           />
-        </div>
-        <div className="p-5 md:p-6">
-          <div className="flex items-center gap-3 mb-3">
-            <span className="font-body text-xs font-medium tracking-wider uppercase text-gold-600 bg-gold-50 px-2 py-0.5 rounded">
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night/80 to-transparent p-5">
+            <span className="font-body text-xs font-semibold tracking-[0.18em] uppercase text-gold-300">
               {category}
             </span>
-            <time className="font-body text-xs text-warm-300" dateTime={date}>
-              {new Date(date + "T00:00:00").toLocaleDateString("en-US", {
-                month: "long",
-                day: "numeric",
-                year: "numeric",
-              })}
-            </time>
           </div>
-          <h3 className="font-display font-semibold text-h3 text-indigo-700 mb-2 group-hover:text-indigo-600 transition-colors">
+        </div>
+        <div className={`flex flex-col ${featured ? "p-7 md:p-9" : "p-6"}`}>
+          <time className="font-body text-xs text-warm-300" dateTime={date}>
+            {new Date(date + "T00:00:00").toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </time>
+          <h3 className={`mt-3 font-display font-semibold text-indigo-700 transition-colors group-hover:text-indigo-600 ${featured ? "text-h2" : "text-h3"}`}>
             {title}
           </h3>
-          <p className="font-body text-sm text-warm-500 line-clamp-2">
+          <p className={`mt-3 font-body text-sm leading-relaxed text-warm-500 ${featured ? "line-clamp-4" : "line-clamp-3"}`}>
             {excerpt}
           </p>
+          <span className="mt-6 inline-flex font-body text-sm font-semibold text-gold-600">
+            Read story &rarr;
+          </span>
         </div>
       </Link>
     </article>
