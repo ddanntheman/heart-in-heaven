@@ -3,15 +3,18 @@ import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "How It Works",
+  title: "How Leveraged Giving Works | Heart In Heaven",
   description:
-    "Leveraged giving explained. Your monthly gift is pooled with other Heart Partners and distributed across 20+ vetted Christian ministries.",
+    "Leveraged giving explained: your monthly gift is pooled with other Heart Partners and distributed across 20+ vetted Christian ministries. Like a mutual fund for generosity.",
+  alternates: {
+    canonical: "https://heartinheaven.org/how-it-works",
+  },
 };
 
 const faqs = [
   {
     q: "What is leveraged giving?",
-    a: "Leveraged giving pools many small monthly donations into one fund, then distributes them evenly across 20+ vetted ministries. Like a mutual fund for generosity — one gift reaches more of the world's most vulnerable.",
+    a: "Leveraged giving pools many small monthly donations into one fund, then distributes them evenly across 20+ vetted ministries. Like a mutual fund for generosity: one gift reaches more of the world's most vulnerable.",
   },
   {
     q: "How are partner ministries chosen?",
@@ -23,7 +26,7 @@ const faqs = [
   },
   {
     q: "Can I choose which ministry gets my money?",
-    a: "Heart In Heaven distributes funds evenly across all partners. This is by design — it's what makes leveraged giving powerful. If you want to give to a specific program like Launch Liberia, we offer campaign-specific giving too.",
+    a: "Heart In Heaven distributes funds evenly across all partners. This is by design: it's what makes leveraged giving powerful. If you want to give to a specific program like Launch Liberia, we offer campaign-specific giving too.",
   },
   {
     q: "Is my donation tax-deductible?",
@@ -72,12 +75,12 @@ export default function HowItWorksPage() {
             <StepExpanded
               number={1}
               title="You give $40/mo"
-              description="Sign up as a Heart Partner with a simple monthly gift. $40 is the benchmark — it represents a full share across all 20+ ministries. But any amount helps. Whether $25 or $150, your gift is pooled with thousands of others."
+              description="Sign up as a Heart Partner with a simple monthly gift. $40 is the benchmark: it represents a full share across all 20+ ministries. But any amount helps. Whether $25 or $150, your gift is pooled with thousands of others."
             />
             <StepExpanded
               number={2}
               title="We pool it with thousands of Heart Partners"
-              description="Every month, gifts from all Heart Partners are collected into a single fund. This pooling creates purchasing power and reach that no individual gift could achieve alone. Think of it like a mutual fund — diversification amplifies impact."
+              description="Every month, gifts from all Heart Partners are collected into a single fund. This pooling creates purchasing power and reach that no individual gift could achieve alone. Think of it like a mutual fund: diversification amplifies impact."
             />
             <StepExpanded
               number={3}
@@ -289,7 +292,7 @@ export default function HowItWorksPage() {
             One gift. Twenty ministries. Start making an eternal impact today.
           </p>
           <Button href="/give" variant="primary">
-            Become a Heart Partner — $40/mo
+            Become a Heart Partner: $40/mo
           </Button>
         </div>
       </section>

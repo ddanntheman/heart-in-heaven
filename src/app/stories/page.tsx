@@ -2,9 +2,12 @@ import { Metadata } from "next";
 import { StoryCard } from "@/components/StoryCard";
 
 export const metadata: Metadata = {
-  title: "Stories",
+  title: "Impact Stories from Liberia and Christian Relief Partners",
   description:
-    "Stories of impact from Heart In Heaven's partner ministries and Heart Partners around the world.",
+    "Read real stories of how Heart In Heaven donors are funding education, meals, and economic development in Liberia and through 20+ Christian relief partners worldwide.",
+  alternates: {
+    canonical: "https://heartinheaven.org/stories",
+  },
 };
 
 const categories = ["All", "Liberia", "Heart Partner", "Partner Ministry", "Devotional"];

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -45,11 +46,23 @@ export function Header() {
         aria-label="Main navigation"
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <HeartIcon className="w-8 h-8 text-indigo-600" />
-          <span className="font-display font-semibold text-lg text-indigo-700 tracking-tight">
-            Heart In Heaven
-          </span>
+        <Link href="/" className="flex items-center gap-3 shrink-0 group">
+          <div className="relative w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-lg">
+            <Image
+              src="/logo.png"
+              alt=""
+              fill
+              className="object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-display font-bold text-base md:text-lg text-indigo-700 tracking-tight leading-none uppercase">
+              Heart In Heaven
+            </span>
+            <span className="font-body text-[10px] text-warm-500 uppercase tracking-[0.1em] mt-1 leading-none">
+              Grateful Generosity
+            </span>
+          </div>
         </Link>
 
         {/* Desktop nav */}
@@ -121,23 +134,6 @@ export function Header() {
         </div>
       )}
     </header>
-  );
-}
-
-function HeartIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 32 32"
-      fill="none"
-      className={className}
-      aria-hidden="true"
-    >
-      <circle cx="16" cy="16" r="15" fill="currentColor" />
-      <path
-        d="M10 13c0-2 1.5-3.5 3.5-2.5L16 13l2.5-2.5c2-1 3.5.5 3.5 2.5s-2 4.5-6 7.5c-4-3-6-5.5-6-7.5z"
-        fill="#D4A24C"
-      />
-    </svg>
   );
 }
 

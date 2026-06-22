@@ -3,9 +3,12 @@ import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Our Mission",
+  title: "Our Mission | Heart In Heaven Nonprofit",
   description:
-    "Heart In Heaven exists to channel generosity into education, relief, and dignity for the global poor through 20+ vetted Christian ministries.",
+    "Heart In Heaven exists to channel generosity into education, relief, and dignity for the global poor through 20+ vetted Christian ministries. Founded by Angelique C. McGlotten.",
+  alternates: {
+    canonical: "https://heartinheaven.org/our-mission",
+  },
 };
 
 export default function OurMissionPage() {
@@ -45,7 +48,7 @@ export default function OurMissionPage() {
             <p>
               Angelique C. McGlotten was born and raised in Liberia, West
               Africa. She emigrated to the United States following a coup in
-              her home country — but Liberia has always been home. When she
+              her home country. Liberia has always been home. When she
               returned after thirty-three years, what she encountered broke
               her heart and ignited her purpose. She saw suffering in the
               schools. She saw children sitting outside classrooms, unable to
@@ -55,8 +58,8 @@ export default function OurMissionPage() {
             <p>
               In September 2021, Angelique founded Heart In Heaven with a
               singular conviction: that every child in Liberia deserves access
-              to quality education, and that technology — the right technology
-              — could deliver it even where infrastructure had failed.
+              to quality education, and that the right technology could deliver
+              it even where infrastructure had failed.
             </p>
             <p>
               Champions Academy joined the Heart In Heaven Educational Network
@@ -64,7 +67,7 @@ export default function OurMissionPage() {
               Ministry of Education. Today, Heart In Heaven Digital Academy
               (HIHDA) serves 130 students across two campuses, using
               SmartBox-powered digital education to remove the digital divide
-              — one heart at a time.
+              one heart at a time.
             </p>
             <p>
               Heart In Heaven also operates as a leveraged giving platform,
@@ -96,7 +99,7 @@ export default function OurMissionPage() {
               </p>
               <p className="font-display font-semibold text-lg text-indigo-700 leading-snug">
                 A world where every monthly gift reaches orphans, widows, the
-                persecuted, the hungry, the sick, and the unreached — all at
+                persecuted, the hungry, the sick, and the unreached, all at
                 once, every month, through one trusted partner.
               </p>
             </div>
@@ -114,7 +117,7 @@ export default function OurMissionPage() {
           />
           <div className="space-y-4">
             {[
-              "God calls every believer to generosity — not as an obligation, but as a joyful response to grace.",
+              "God calls every believer to generosity, not as an obligation, but as a joyful response to grace.",
               "The global poor deserve dignity, access, and opportunity. Relief and development go hand in hand.",
               "Strategic giving multiplies impact. Pooled generosity reaches further than scattered gifts.",
               "Transparency and accountability are non-negotiable. Every dollar must be traceable.",
@@ -161,7 +164,7 @@ export default function OurMissionPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button href="/give" variant="primary">
-              Become a Heart Partner — $40/mo
+              Become a Heart Partner: $40/mo
             </Button>
             <Button href="/about#team" variant="secondary">
               Meet the team

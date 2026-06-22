@@ -14,7 +14,7 @@ export function MobileGivePill() {
         href="/give"
         className="flex items-center justify-center w-full py-3.5 bg-gold-400 text-charcoal font-body font-semibold text-base rounded-pill shadow-lg hover:bg-gold-500 transition-colors"
       >
-        Become a Heart Partner — $40/mo
+        Become a Heart Partner: $40/mo
       </Link>
     </div>
   );

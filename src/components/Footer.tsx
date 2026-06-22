@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 
+import Image from "next/image";
+
 const missionLinks = [
   { label: "How It Works", href: "/how-it-works" },
   { label: "Where We Work", href: "/launch-liberia" },
@@ -24,9 +26,24 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {/* About column */}
           <div>
-            <h3 className="font-display font-semibold text-lg mb-4">
-              Heart In Heaven
-            </h3>
+            <Link href="/" className="flex items-center gap-3 mb-6 group">
+              <div className="relative w-10 h-10 overflow-hidden rounded-lg bg-white p-1">
+                <Image
+                  src="/logo.png"
+                  alt=""
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-display font-bold text-base text-cream tracking-tight leading-none uppercase">
+                  Heart In Heaven
+                </span>
+                <span className="font-body text-[10px] text-cream/50 uppercase tracking-[0.1em] mt-1 leading-none">
+                  Grateful Generosity
+                </span>
+              </div>
+            </Link>
             <p className="text-sm text-cream/70 leading-relaxed mb-4">
               Heart In Heaven is a 501(c)(3) nonprofit that pools individual
               monthly donations and distributes them evenly across 20+ vetted
@@ -142,7 +159,7 @@ export function Footer() {
             "@type": "NGO",
             name: "Heart In Heaven",
             url: "https://heartinheaven.org",
-            logo: "https://heartinheaven.org/logo.svg",
+            logo: "https://heartinheaven.org/logo.png",
             description:
               "Heart In Heaven pools individual monthly donations and distributes them evenly across 20+ vetted Christian relief organizations.",
             taxID: "87-4020929",

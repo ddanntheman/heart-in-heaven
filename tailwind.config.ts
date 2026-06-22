@@ -22,7 +22,7 @@ const config: Config = {
           800: "#0D132C",
           900: "#060A17",
         },
-        /* Heart Gold (accent — CTAs) */
+        /* Heart Gold (accent - CTAs) */
         gold: {
           50: "#FBF4E2",
           100: "#F4E2B0",
@@ -40,7 +40,7 @@ const config: Config = {
           500: "#E45A3B",
           700: "#A33A22",
         },
-        /* Cream / Linen — backgrounds */
+        /* Cream / Linen - backgrounds */
         cream: "#F7F2E7",
         "cream-2": "#F0E9D8",
         paper: "#FCFAF3",

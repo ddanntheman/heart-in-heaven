@@ -82,7 +82,7 @@ export default function StoryPostPage({ params }: { params: { slug: string } }) 
             Liberia, serves a hot meal to every student every weekday. For
             many students, including Mawolo, it is their only meal of the day.
             The program is called <strong>Fuel First</strong>, and it is funded
-            entirely by monthly Heart Partners — ordinary people giving $40 or
+            entirely by monthly Heart Partners: ordinary people giving $40 or
             $50 a month, pooled together, to make sure no child in their care
             goes hungry during the school day.
           </p>
@@ -93,7 +93,7 @@ export default function StoryPostPage({ params }: { params: { slug: string } }) 
           <p>
             The impact is measurable. Since Fuel First launched, school
             attendance at Champion Academy has increased by 34%. Students are
-            staying longer, scoring higher on exams, and — crucially — coming
+            staying longer, scoring higher on exams, and (crucially) coming
             back the next term. Teachers report that students who eat lunch
             are more focused, more engaged, and more likely to complete
             homework. The ripple effects reach families: parents who know
@@ -119,7 +119,7 @@ export default function StoryPostPage({ params }: { params: { slug: string } }) 
             $50/mo feeds one student for a full school year.
           </p>
           <Button href="/give?campaign=liberia" variant="primary">
-            Fuel a Student — $50/mo
+            Fuel a Student: $50/mo
           </Button>
         </div>
 

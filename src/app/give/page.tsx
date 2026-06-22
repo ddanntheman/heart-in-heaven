@@ -4,9 +4,12 @@ import { TrustStrip } from "@/components/TrustStrip";
 import { DonationForm } from "./DonationForm";
 
 export const metadata: Metadata = {
-  title: "Give",
+  title: "Donate to Heart In Heaven | Give to 20+ Christian Nonprofits",
   description:
-    "Become a Heart Partner. Your monthly gift is split evenly across 20+ vetted Christian relief ministries serving the global poor.",
+    "Give monthly or once. Your donation is split evenly across 20+ vetted Christian relief ministries serving vulnerable communities in Liberia and worldwide. 501(c)(3) tax deductible.",
+  alternates: {
+    canonical: "https://heartinheaven.org/give",
+  },
 };
 
 export default function GivePage() {
@@ -14,7 +17,7 @@ export default function GivePage() {
     <section className="bg-cream min-h-screen">
       <div className="container-main py-12u md:py-16u">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-          {/* Left — Form */}
+          {/* Left - Form */}
           <div>
             <h1 className="font-display font-semibold text-h1 text-indigo-700 mb-2">
               Your gift changes lives.
@@ -26,7 +29,7 @@ export default function GivePage() {
             <DonationForm />
           </div>
 
-          {/* Right — Reinforcement */}
+          {/* Right - Reinforcement */}
           <div className="hidden lg:block">
             <div className="sticky top-28">
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-6">
