@@ -184,7 +184,7 @@ export function InteractiveTransparency() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3 mb-6">
           {partnerMinistries.map((partner) => (
             <button
               key={partner.name}
@@ -192,16 +192,16 @@ export function InteractiveTransparency() {
               onMouseEnter={() => setActivePartner(partner)}
               onFocus={() => setActivePartner(partner)}
               onClick={() => setActivePartner(partner)}
-              className={`min-h-24 rounded-2xl border p-3 text-left transition-all duration-200 ${
+              className={`min-h-28 min-w-0 overflow-hidden rounded-2xl border p-3.5 text-left transition-all duration-200 ${
                 activePartner.name === partner.name
                   ? "border-gold-400 bg-gold-50 shadow-md -translate-y-1"
                   : "border-warm-100 bg-white hover:border-gold-200 hover:-translate-y-0.5"
               }`}
             >
-              <span className="font-body font-semibold text-sm text-indigo-700 leading-tight block">
+              <span className="block max-w-full font-body text-[0.82rem] font-semibold leading-[1.15] text-indigo-700 [overflow-wrap:anywhere] hyphens-auto">
                 {partner.name}
               </span>
-              <span className="font-body text-xs text-warm-300 mt-2 block">
+              <span className="mt-2 block max-w-full font-body text-[0.72rem] leading-snug text-warm-300 [overflow-wrap:anywhere] hyphens-auto">
                 {partner.focus}
               </span>
             </button>
