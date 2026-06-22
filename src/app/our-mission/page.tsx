@@ -3,7 +3,7 @@ import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Our Mission | Christian Nonprofit",
+  title: "Our Mission: Christian Nonprofit",
   description:
     "Heart In Heaven exists to channel generosity into education, relief, and dignity for the global poor through 20+ vetted Christian ministries. Founded by Angelique C. McGlotten.",
   alternates: {
