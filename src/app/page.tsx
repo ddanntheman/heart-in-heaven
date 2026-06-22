@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Newsletter } from "@/components/Newsletter";
 
 export const metadata: Metadata = {
-  title: "Heart In Heaven | One gift. Twenty ministries. Eternal impact.",
+  title: { absolute: "Heart In Heaven | One gift. Twenty ministries. Eternal impact." },
   description:
     "Heart In Heaven pools your monthly giving across 20+ vetted Christian relief partners so every dollar reaches more of the vulnerable in Liberia and beyond.",
 };

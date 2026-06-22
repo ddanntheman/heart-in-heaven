@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { StoryCard } from "@/components/StoryCard";
 
 export const metadata: Metadata = {
-  title: "Impact Stories from Liberia and Christian Relief Partners",
+  title: "Impact Stories from Liberia and Relief Partners",
   description:
     "Read real stories of how Heart In Heaven donors are funding education, meals, and economic development in Liberia and through 20+ Christian relief partners worldwide.",
   alternates: {

@@ -3,7 +3,7 @@ import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Our Mission | Heart In Heaven Nonprofit",
+  title: "Our Mission | Christian Nonprofit",
   description:
     "Heart In Heaven exists to channel generosity into education, relief, and dignity for the global poor through 20+ vetted Christian ministries. Founded by Angelique C. McGlotten.",
   alternates: {
@@ -66,7 +66,7 @@ export default function OurMissionPage() {
               in February 2024 and became fully accredited with the Liberian
               Ministry of Education. Today, Heart In Heaven Digital Academy
               (HIHDA) serves 130 students across two campuses, using
-              SmartBox-powered digital education to remove the digital divide
+              SmartBox-powered digital education to remove the digital divide,
               one heart at a time.
             </p>
             <p>
